@@ -6,14 +6,14 @@ const Navbar = () => {
   const title = opened ? "Close navigation" : "Open navigation";
 
   return (
-    <div className="bg-teal-600 lg:py-3">
+    <div className="bg-teal-700 lg:py-3">
       <div className="flex flex-col lg:items-center lg:px-0 lg:container mx-auto text-teal-200 lg:flex-row">
         <div className="flex items-center justify-between px-4 py-4 border-b border-teal-500 lg:px-0 lg:pr-4 lg:py-0 lg:border-b-0">
-          <div className="font-normal">
+          <a href="#" className="font-normal hover:text-white">
             BEBECE
             <br />
             <span className="font-bold text-xl">NEWS</span>
-          </div>
+          </a>
           <div className="">
             <Burger color="#99f6e4" className="block lg:hidden" opened={opened} onClick={() => setOpened((o) => !o)} title={title} />
           </div>
