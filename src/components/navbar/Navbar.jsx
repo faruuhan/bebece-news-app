@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="bg-teal-600 lg:py-3">
       <div className="flex flex-col lg:items-center lg:px-0 lg:container mx-auto text-teal-200 lg:flex-row">
-        <div className="flex items-center justify-between px-4 py-4 border-b border-teal-500 lg:px-0 lg:py-0 lg:border-b-0">
+        <div className="flex items-center justify-between px-4 py-4 border-b border-teal-500 lg:px-0 lg:pr-4 lg:py-0 lg:border-b-0">
           <div className="font-normal">
             BEBECE
             <br />
