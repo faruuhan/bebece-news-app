@@ -37,19 +37,24 @@ const CardNewsVertical = (props) => {
 
 const CardNewsVerticalLoad = (props) => {
   return (
-    <div className="flex flex-col gap-2">
-      {props.skeleton.map((items) => {
-        return (
-          <div className="animate-pulse flex gap-1" key={items}>
-            <div className="aspect-[4/3] bg-slate-300 animate-pulse rounded-md h-full w-[150px]" />
-            <div className="flex flex-col gap-3 w-full">
-              <div className="h-3 bg-slate-300 rounded" />
-              <div className="h-3 bg-slate-300 rounded" />
+    <>
+      <div className="animate-pulse border-l-4 slate-teal-300 mb-4 pl-4">
+        <div className="bg-slate-300 h-6 w-32 rounded" />
+      </div>
+      <div className="flex flex-col gap-2">
+        {props.skeleton.map((items) => {
+          return (
+            <div className="animate-pulse flex gap-1" key={items}>
+              <div className="aspect-[4/3] bg-slate-300 animate-pulse rounded-md h-full w-[150px]" />
+              <div className="flex flex-col gap-3 w-full">
+                <div className="h-3 bg-slate-300 rounded" />
+                <div className="h-3 bg-slate-300 rounded" />
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
