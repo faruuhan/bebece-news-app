@@ -18,6 +18,7 @@ const Homepage = () => {
       setIsReady(true);
     };
     fetchData();
+    document.title = "Home / Bebece News";
   }, []);
 
   const fetchNewsID = async () => {
