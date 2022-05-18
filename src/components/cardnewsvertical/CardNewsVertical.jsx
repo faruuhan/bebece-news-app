@@ -3,10 +3,10 @@ import React from "react";
 const CardNewsVertical = (props) => {
   return (
     <div className="flex flex-col gap-2">
-      {props.news.map((items) => {
+      {props?.news.map((items) => {
         return (
           <div className="flex gap-1">
-            <img src={items.urlToImage} className="aspect-[4/3] rounded-md h-full w-[150px]" alt={items.title} />
+            <img src={!items.urlToImage ? `https://dpwfkdtjabar.com/assets/images/artikel/no-image.png` : items.urlToImage} className="aspect-[4/3] rounded-md h-full w-[150px]" alt={items.title} />
             <div className="flex flex-col w-full">
               <h3 className="font-semibold text-base">{items.title}</h3>
               <p className="text-neutral-400 font-normal">{items.publishedAt}</p>
