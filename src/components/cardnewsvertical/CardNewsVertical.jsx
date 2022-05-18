@@ -12,7 +12,15 @@ const CardNewsVertical = (props) => {
           return (
             <div className="flex gap-1">
               <AspectRatio ratio={4 / 3} style={{ width: 300 }}>
-                <Image height={200} src={items.urlToImage} alt={items.title} withPlaceholder />
+                <Image
+                  classNames={{
+                    placeholder: "bg-slate-300",
+                  }}
+                  height={200}
+                  src={items.urlToImage}
+                  alt={items.title}
+                  withPlaceholder
+                />
               </AspectRatio>
               <div className="flex flex-col w-full">
                 <h3 className="font-semibold text-base">{items.title}</h3>
