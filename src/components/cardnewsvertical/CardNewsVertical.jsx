@@ -1,43 +1,40 @@
 import React from "react";
-import { Image } from "@mantine/core";
 
-const CardNewsVertical = () => {
+const CardNewsVertical = (props) => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex gap-1">
-        <Image
-          width={250}
-          src={`https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`}
-          classNames={{
-            image: "aspect-[4/3]",
-          }}
-          alt="With default placeholder"
-          withPlaceholder
-        />
-        <div>
-          <h3 className="font-semibold text-[17px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, maiores?</h3>
-          <p className="text-neutral-400 font-normal">12 Mei 2022</p>
-          <p className="text-neutral-700 font-normal">Source: detik.com</p>
-        </div>
-      </div>
-      <div className="flex gap-1">
-        <Image
-          width={250}
-          src={`https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`}
-          classNames={{
-            image: "aspect-[4/3]",
-          }}
-          alt="With default placeholder"
-          withPlaceholder
-        />
-        <div>
-          <h3 className="font-semibold text-[17px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, maiores?</h3>
-          <p className="text-neutral-400 font-normal">12 Mei 2022</p>
-          <p className="text-neutral-700 font-normal">Source: detik.com</p>
-        </div>
-      </div>
+      {props.news.map((items) => {
+        return (
+          <div className="flex gap-1">
+            <img src={items.urlToImage} className="aspect-[4/3] rounded-md h-full w-[150px]" alt={items.title} />
+            <div className="flex flex-col w-full">
+              <h3 className="font-semibold text-base">{items.title}</h3>
+              <p className="text-neutral-400 font-normal">{items.publishedAt}</p>
+              <p className="text-neutral-700 font-normal">{items.source.name}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-export default CardNewsVertical;
+const CardNewsVerticalLoad = (props) => {
+  return (
+    <div className="flex flex-col gap-2">
+      {props.skeleton.map((items) => {
+        return (
+          <div className="animate-pulse flex gap-1" key={items}>
+            <div className="aspect-[4/3] bg-slate-300 animate-pulse rounded-md h-full w-[150px]" />
+            <div className="flex flex-col gap-3 w-full">
+              <div className="h-3 bg-slate-300 rounded" />
+              <div className="h-3 bg-slate-300 rounded" />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export { CardNewsVertical, CardNewsVerticalLoad };
