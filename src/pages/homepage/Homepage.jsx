@@ -55,26 +55,11 @@ const Homepage = () => {
 
   return (
     <Layout>
-      <div className="pt-5 lg:container mx-auto">
+      <div className="pt-5 px-4 lg:px-0 lg:container mx-auto">
         <div className="flex flex-col lg:flex-row gap-2">
-          <div className="w-full lg:w-4/12">
-            <div className="border-l-4 border-teal-700 mb-4 pl-4">
-              <h3 className="text-[20px] font-medium">Indonesia</h3>
-            </div>
-            {isReady ? <CardNewsVertical news={newsID} /> : <CardNewsVerticalLoad skeleton={load} />}
-          </div>
-          <div className="w-full lg:w-4/12">
-            <div className="border-l-4 border-teal-700 mb-4 pl-4">
-              <h3 className="text-[20px] font-medium">United States</h3>
-            </div>
-            {isReady ? <CardNewsVertical news={newsUS} /> : <CardNewsVerticalLoad skeleton={load} />}
-          </div>
-          <div className="w-full lg:w-4/12">
-            <div className="border-l-4 border-teal-700 mb-4 pl-4">
-              <h3 className="text-[20px] font-medium">United Kingdom</h3>
-            </div>
-            {isReady ? <CardNewsVertical news={newsUK} /> : <CardNewsVerticalLoad skeleton={load} />}
-          </div>
+          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="Indonesia" news={newsID} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
+          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="United States" news={newsUS} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
+          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="United Kingdom" news={newsUK} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
         </div>
       </div>
     </Layout>

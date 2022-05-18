@@ -1,21 +1,29 @@
 import React from "react";
+import { AspectRatio, Image } from "@mantine/core";
 
 const CardNewsVertical = (props) => {
   return (
-    <div className="flex flex-col gap-2">
-      {props?.news.map((items) => {
-        return (
-          <div className="flex gap-1">
-            <img src={!items.urlToImage ? `https://dpwfkdtjabar.com/assets/images/artikel/no-image.png` : items.urlToImage} className="aspect-[4/3] rounded-md h-full w-[150px]" alt={items.title} />
-            <div className="flex flex-col w-full">
-              <h3 className="font-semibold text-base">{items.title}</h3>
-              <p className="text-neutral-400 font-normal">{items.publishedAt}</p>
-              <p className="text-neutral-700 font-normal">{items.source.name}</p>
+    <>
+      <div className="border-l-4 border-teal-700 mb-4 pl-4">
+        <h3 className="text-[20px] font-medium">{props.titleHeader}</h3>
+      </div>
+      <div className="flex flex-col gap-2">
+        {props?.news.map((items) => {
+          return (
+            <div className="flex gap-1">
+              <AspectRatio ratio={4 / 3} style={{ width: 300 }}>
+                <Image height={200} src={items.urlToImage} alt={items.title} withPlaceholder />
+              </AspectRatio>
+              <div className="flex flex-col w-full">
+                <h3 className="font-semibold text-base">{items.title}</h3>
+                <p className="text-neutral-400 font-normal">{items.publishedAt}</p>
+                <p className="text-neutral-700 font-normal">{items.source.name}</p>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
