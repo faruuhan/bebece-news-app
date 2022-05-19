@@ -60,16 +60,34 @@ const Homepage = () => {
       <div className="pt-5 px-4 lg:px-0 lg:container mx-auto">
         <div className="flex flex-col lg:flex-row gap-2">
           <div className="w-full lg:w-4/12 flex flex-col gap-2">
-            {isReady ? <TitleCategory titleHeader="Indonesia" news={newsID} /> : <TitleCategoryLoad />}
-            {isReady ? <CardNewsVertical news={newsID} /> : <CardNewsVerticalLoad skeleton={load} />}
+            {isReady ? <TitleCategory titleHeader="Indonesia" /> : <TitleCategoryLoad />}
+            {isReady
+              ? newsID?.map((news) => {
+                  return <CardNewsVertical news={news} />;
+                })
+              : load.map((load) => {
+                  return <CardNewsVerticalLoad skeleton={load} />;
+                })}
           </div>
           <div className="w-full lg:w-4/12 flex flex-col gap-2">
-            {isReady ? <TitleCategory titleHeader="United State" news={newsID} /> : <TitleCategoryLoad />}
-            {isReady ? <CardNewsVertical news={newsUS} /> : <CardNewsVerticalLoad skeleton={load} />}
+            {isReady ? <TitleCategory titleHeader="United State" /> : <TitleCategoryLoad />}
+            {isReady
+              ? newsUS?.map((news) => {
+                  return <CardNewsVertical news={news} />;
+                })
+              : load.map((load) => {
+                  return <CardNewsVerticalLoad skeleton={load} />;
+                })}
           </div>
           <div className="w-full lg:w-4/12 flex flex-col gap-2">
-            {isReady ? <TitleCategory titleHeader="United Kingdom" news={newsID} /> : <TitleCategoryLoad />}
-            {isReady ? <CardNewsVertical news={newsUK} /> : <CardNewsVerticalLoad skeleton={load} />}
+            {isReady ? <TitleCategory titleHeader="United Kingdom" /> : <TitleCategoryLoad />}
+            {isReady
+              ? newsUK?.map((news) => {
+                  return <CardNewsVertical news={news} />;
+                })
+              : load.map((load) => {
+                  return <CardNewsVerticalLoad skeleton={load} />;
+                })}
           </div>
         </div>
       </div>
