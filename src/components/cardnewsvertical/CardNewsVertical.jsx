@@ -1,5 +1,4 @@
 import React from "react";
-import { AspectRatio, Image } from "@mantine/core";
 
 const CardNewsVertical = (props) => {
   return (
@@ -11,17 +10,7 @@ const CardNewsVertical = (props) => {
         {props?.news.map((items) => {
           return (
             <div className="flex gap-1">
-              <AspectRatio ratio={4 / 3} style={{ width: 300 }}>
-                <Image
-                  classNames={{
-                    placeholder: "bg-slate-300",
-                  }}
-                  height={200}
-                  src={items.urlToImage}
-                  alt={items.title}
-                  withPlaceholder
-                />
-              </AspectRatio>
+              <img src={!items.urlToImage ? "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" : items.urlToImage} alt={items.title} className="aspect-[4/3] h-full w-[200px]" />
               <div className="flex flex-col w-full">
                 <h3 className="font-semibold text-base">{items.title}</h3>
                 <p className="text-neutral-400 font-normal">{items.publishedAt}</p>
