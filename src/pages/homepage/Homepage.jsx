@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import { CardNewsVertical, CardNewsVerticalLoad } from "../../components/cardnewsvertical/CardNewsVertical";
+import { TitleCategory, TitleCategoryLoad } from "../../components/titelcategory/TitleCategory";
 import axios from "axios";
 
 const Homepage = () => {
@@ -58,9 +59,18 @@ const Homepage = () => {
     <Layout>
       <div className="pt-5 px-4 lg:px-0 lg:container mx-auto">
         <div className="flex flex-col lg:flex-row gap-2">
-          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="Indonesia" news={newsID} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
-          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="United States" news={newsUS} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
-          <div className="w-full lg:w-4/12">{isReady ? <CardNewsVertical titleHeader="United Kingdom" news={newsUK} /> : <CardNewsVerticalLoad skeleton={load} />}</div>
+          <div className="w-full lg:w-4/12 flex flex-col gap-2">
+            {isReady ? <TitleCategory titleHeader="Indonesia" news={newsID} /> : <TitleCategoryLoad />}
+            {isReady ? <CardNewsVertical news={newsID} /> : <CardNewsVerticalLoad skeleton={load} />}
+          </div>
+          <div className="w-full lg:w-4/12 flex flex-col gap-2">
+            {isReady ? <TitleCategory titleHeader="United State" news={newsID} /> : <TitleCategoryLoad />}
+            {isReady ? <CardNewsVertical news={newsUS} /> : <CardNewsVerticalLoad skeleton={load} />}
+          </div>
+          <div className="w-full lg:w-4/12 flex flex-col gap-2">
+            {isReady ? <TitleCategory titleHeader="United Kingdom" news={newsID} /> : <TitleCategoryLoad />}
+            {isReady ? <CardNewsVertical news={newsUK} /> : <CardNewsVerticalLoad skeleton={load} />}
+          </div>
         </div>
       </div>
     </Layout>
