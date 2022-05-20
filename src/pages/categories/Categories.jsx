@@ -13,6 +13,7 @@ const Categories = () => {
   const { categories } = useParams();
 
   useEffect(() => {
+    setIsReady(false);
     fecthNewsCategories();
   }, [categories]);
 
