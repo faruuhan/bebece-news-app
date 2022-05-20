@@ -105,7 +105,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="mt-5">{isReady ? <TitleCategory titleHeader="Indonesia Top Headline" /> : <TitleCategoryLoad />}</div>
-        <div className="w-full flex flex-wrap gap-3 px-auto">
+        <div className="w-full flex flex-wrap gap-3 justify-between">
           {isReady
             ? newsTopHeadLineID?.map((news) => {
                 return <CardNewsHorizontal news={news} />;

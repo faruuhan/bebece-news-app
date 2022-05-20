@@ -22,10 +22,10 @@ const Navbar = () => {
 
         <div className={`${opened ? "block" : "hidden"} lg:flex flex-col justify-between w-full lg:flex-row`}>
           <div className="flex flex-col lg:flex-row">
-            <Link to="/bussines" className="block px-4 py-3 lg:py-0 hover:text-white">
+            <Link to="/business" className="block px-4 py-3 lg:py-0 hover:text-white">
               Bisnis
             </Link>
-            <Link to="/entertaiment" className="block px-4 py-3 lg:py-0 hover:text-white">
+            <Link to="/entertainment" className="block px-4 py-3 lg:py-0 hover:text-white">
               Hiburan
             </Link>
             <Link to="/health" className="block px-4 py-3 lg:py-0 hover:text-white">
