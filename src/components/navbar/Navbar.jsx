@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Burger } from "@mantine/core";
 
 const Navbar = () => {
@@ -10,11 +10,11 @@ const Navbar = () => {
     <div className="bg-teal-700 lg:py-3">
       <div className="flex flex-col lg:items-center lg:px-0 lg:container mx-auto text-teal-200 lg:flex-row">
         <div className="flex items-center justify-between px-4 py-4 border-b border-teal-500 lg:px-0 lg:pr-4 lg:py-0 lg:border-b-0">
-          <Link to="/" className="font-normal hover:text-white">
+          <NavLink to="/" className="font-normal hover:text-white">
             BEBECE
             <br />
             <span className="font-bold text-xl">NEWS</span>
-          </Link>
+          </NavLink>
           <div className="">
             <Burger color="#99f6e4" className="block lg:hidden" opened={opened} onClick={() => setOpened((o) => !o)} title={title} />
           </div>
@@ -22,24 +22,24 @@ const Navbar = () => {
 
         <div className={`${opened ? "block" : "hidden"} lg:flex flex-col justify-between w-full lg:flex-row`}>
           <div className="flex flex-col lg:flex-row">
-            <Link to="/business" className="block px-4 py-3 lg:py-0 hover:text-white">
+            <NavLink to="/business" className="block px-4 py-3 lg:py-0 hover:text-white">
               Bisnis
-            </Link>
-            <Link to="/entertainment" className="block px-4 py-3 lg:py-0 hover:text-white">
+            </NavLink>
+            <NavLink to="/entertainment" className="block px-4 py-3 lg:py-0 hover:text-white">
               Hiburan
-            </Link>
-            <Link to="/health" className="block px-4 py-3 lg:py-0 hover:text-white">
+            </NavLink>
+            <NavLink to="/health" className="block px-4 py-3 lg:py-0 hover:text-white">
               Kesehatan
-            </Link>
-            <Link to="/science" className="block px-4 py-3 lg:py-0 hover:text-white">
+            </NavLink>
+            <NavLink to="/science" className="block px-4 py-3 lg:py-0 hover:text-white">
               Sains
-            </Link>
-            <Link to="/sports" className="block px-4 py-3 lg:py-0 hover:text-white">
+            </NavLink>
+            <NavLink to="/sports" className="block px-4 py-3 lg:py-0 hover:text-white">
               Olahraga
-            </Link>
-            <Link to="/technology" className="block px-4 py-3 lg:py-0 hover:text-white">
+            </NavLink>
+            <NavLink to="/technology" className="block px-4 py-3 lg:py-0 hover:text-white">
               Teknologi
-            </Link>
+            </NavLink>
           </div>
           <div className="flex flex-col lg:flex-row">
             <button className="block px-4 py-3 lg:py-0 hover:text-white">
