@@ -9,12 +9,10 @@ import { CardNewsHorizontal, CardNewsHorizontalLoad } from "../../components/car
 import { reduxAction } from "../../utils/redux/actions/actions";
 
 const Categories = () => {
-  // const [newsCategories, setNewsCategories] = useState([]);
   const dispatch = useDispatch();
   const newsCategories = useSelector((state) => state.newsCategories);
   const [load] = useState([1, 2, 3, 4, 5]);
   const loading = useSelector((state) => state.loading);
-  // const [isReady, setIsReady] = useState(false);
   const { categories } = useParams();
 
   useEffect(() => {
