@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+import "moment/locale/id";
 
 const CardNewsVertical = (props) => {
   return (
@@ -6,7 +8,7 @@ const CardNewsVertical = (props) => {
       <img src={!props.news.urlToImage ? "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" : props.news.urlToImage} alt={props.title} className="aspect-[4/3] h-full w-[200px]" />
       <div className="flex flex-col w-full">
         <h3 className="font-semibold text-base">{props.news.title}</h3>
-        <p className="text-neutral-400 font-normal">{props.news.publishedAt}</p>
+        <p className="text-neutral-400 font-normal">{moment(props.news.publishedAt).format("dddd, D MMMM YYYY")}</p>
         <p className="text-neutral-700 font-normal">{props.news.source.name}</p>
       </div>
     </div>
