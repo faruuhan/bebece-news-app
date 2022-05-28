@@ -10,5 +10,5 @@ React js, redux, moment js, tailwind css
 
 ### NOTE!!
 
-change name .env_ to .env<br/>
-put your api key from https://newsapi.org/
+rename file `.env_` to `.env`<br/>
+and, put your api key from https://newsapi.org/
